@@ -1,0 +1,135 @@
+<div>
+    <div >
+      <div class="card" style="width: 74%; margin-left: 13%; margin-top: 6%;" >
+        <div class="m-3">
+          <form style="width: 88%;background-clip: border-box; margin-left: 55px;" >
+            <div class="row">
+              <label for="exampleFormControlInput1" class="form-label m-2">Token</label>
+              <input  class="form-control" id="exampleFormControlInput1" [(ngModel)]="token" placeholder="Nhập token" name="link">
+            </div>
+          </form>
+          <form style="width: 88%;background-clip: border-box; margin-left: 55px;" >
+            <div class="row">
+              <label for="exampleFormControlInput1" class="form-label m-2">ID Google sheet</label>
+              <input  class="form-control" id="exampleFormControlInput1" [(ngModel)]="idGoogleSheet" placeholder="Nhập ID Google sheet" name="link">
+            </div>
+          </form>
+          <form style="width: 88%;background-clip: border-box;margin-left: 55px;" >
+            <div class="row">
+              <div class="col">
+                <label class="m-2">From date</label>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group" style="width:150px">
+                      <input class="form-control" placeholder="yyyy-mm-dd"
+                            name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                          <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                          <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <label class="m-2">To date</label>
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <div class="input-group" style="width:150px">
+                          <input class="form-control" placeholder="yyyy-mm-dd"  name="dp" [(ngModel)]="model1" ngbDatepicker #d1="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar"  (click)="d1.toggle()" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                              <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                              <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                            </svg></button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col">
+                    <div class="row" style="margin-left: 24px;">
+                      <label class="m-2">Fillter days</label>
+                      <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle >{{titleFunctionList}}</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button ngbDropdownItem (click)="selectFunctionList(itemList)" *ngFor="let itemList of mainFunction">{{itemList.name}}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <label class="labelNote" for="" style="margin-left: 50px;">Lưu ý: From date, To date và Fillter days chỉ dùng cho tracking monthly!!</label>
+          <form style="width: 90%;background-clip: border-box; margin-left: 55px;" >
+            <div class="row">
+              <div class="col">
+                <form style="width: 95%;background-clip: border-box;" >
+                  <div class="row">
+                    <label for="exampleFormControlInput1" class="form-label m-2">ID song và ID artis</label>
+                    <textarea  type="text" class="form-control" style="height: 200px;" [(ngModel)]="idSongArtis" placeholder="Nhập ID song và ID artis (idArtis|idSong)" name="contentDiary" ></textarea >
+                      <label class="labelNote"  for="">Lưu ý: Đối với tracking monthly định dạng là "idArtis|idSong|nameArtis|songName".</label>
+                  </div>
+                </form>
+            </div>
+              <div class="col">
+                <form style="width: 95%;background-clip: border-box;" >
+                  <div class="row">
+                    <label for="exampleFormControlInput1" class="form-label m-2">ID play list</label>
+                    <textarea  type="text" style="height: 200px;" class="form-control" [(ngModel)]="idPlaylist" placeholder="Nhập ID play list" name="contentDiary" ></textarea >
+                      <label class="labelNote" for="">Lưu ý: Định dạng là "idPlaylist".</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <ul ngbNav #nav="ngbNav" class="nav-tabs m-3" >
+          <li ngbNavItem>
+            <a ngbNavLink>Tracking Spotify</a>
+            <ng-template ngbNavContent>
+              <app-tracking-spotify ></app-tracking-spotify>
+            </ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink>Tracking Stream</a>
+            <ng-template ngbNavContent>
+              <app-tracking-stream ></app-tracking-stream>
+            </ng-template>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
+        <div class="row">
+          <div class="col">
+            <div class="row labelNoteEnd" style="margin-top: 0px;margin-left: 50px;">
+              <label for="">Quy định:</label>
+              <label for="" style="margin-left: 30px ;">- Tên trang tính sheet tracking monthly: Tracking w date; Tracking w fillters</label>
+              <label for="" style="margin-left: 30px ;">- Tên 3 trang tính sheet tracking daily: Playlist w songs; raw_playlist; raw_stream</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row" style="margin-top: 40px;">
+              <div class="col">
+                <button type="button" class="btn btn-info float-right" style="margin-left:10%" (click)="trackingSpotifyClick()" name="btnSubmit">Tracking Daily</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-info float-right" style="margin-right:35%" (click)="trackingStreamClick()" name="btnSubmit">Tracking Monthly</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="row labelNoteImportan" style="margin-top: 10px;margin-left: 50px;">
+          <p><ngb-progressbar type="success" [value]="value" style="width:93%;height: 3px;"></ngb-progressbar></p>
+          <label *ngIf="isNotif" style="color: blue;" for="" >{{notif}}</label>
+          <label for="">Chú ý phải cấp quyền truy cập vào sheet cho API Google Sheet: sharkilybk-249@spotify-1615884083054.iam.gserviceaccount.com  trước thì mới đẩy được dữ liệu lên sheet!!</label>
+        </div>
+    </div>
+  </div>
+</div>
+

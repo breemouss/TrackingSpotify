@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Kaushan+Script&family=Permanent+Marker&family=Satisfy&display=swap');
+
+header{
+    margin: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #023047;
+    position: fixed;
+    z-index: 1000;
+    display:flex;
+}
+.text-title{
+    color: white;
+    margin-top: 15px;
+    margin-right: 10%;
+    margin-left: 2%;
+    font-size: 30px;
+    font-family: 'Kaushan Script', cursive;;
+    position: block;
+    cursor: pointer;
+    color: #80ffdb;
+    z-index: 11111;
+}
+.img1{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.8;
+    z-index: 1;
+}
+.body-app{
+    margin-top: 60px;
+    width: 100%;
+    height: 92vh;
+    position: absolute;
+    z-index: 5;
+    
+}
+.overlay{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+  }
+  
+  @media (min-width: auto) {
+    .h-custom-2 {
+      height: 100vh;
+    }
+  }
+/* background-image: url(https://cdn.pixabay.com/photo/2013/10/27/17/14/snowfall-201496_960_720.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    z-index: 1; */

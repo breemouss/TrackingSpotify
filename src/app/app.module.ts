@@ -27,7 +27,7 @@ import { NgProgressModule } from 'ngx-progressbar';
     CommonModule,
     NgProgressModule
   ],
-  providers: [TrackingService,{provide: "BASE_API_URL", useValue: "http://192.168.1.70:3129/api/TrackingSpotify/" }],
+  providers: [TrackingService,{provide: "BASE_API_URL", useValue: "http://27.72.102.162/:3129/api/TrackingSpotify/" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

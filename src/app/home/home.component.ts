@@ -119,7 +119,7 @@ export class HomeComponent implements OnInit {
               this.notif = "Tracking daily successfully!!"
               this.value = 100
               console.log(res)
-              if(res != "\"Done\""){
+              if(res != "Done"){
                 alert(res)
               }
             })
@@ -176,7 +176,7 @@ export class HomeComponent implements OnInit {
           this.value = 100
           this.notif = "Tracking monthly successfully!!"
           console.log(res)
-          if(res != "\"Done\""){
+          if(res != "Done"){
             alert(res)
           }
         })

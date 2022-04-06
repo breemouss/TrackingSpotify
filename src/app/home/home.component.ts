@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit {
 
   
   public today = this.calendar.getToday() 
-  public model: NgbDateStruct = {year:2021, month:11, day:1};
-  public model1: NgbDateStruct = {year:2021, month:11, day:1};
+  public model: NgbDateStruct = {year:2022, month:1, day:1};
+  public model1: NgbDateStruct = {year:2022, month:1, day:1};
   public value:number=0
   public notif:string="";
   public token:string="";
@@ -139,7 +139,9 @@ export class HomeComponent implements OnInit {
       this.checkProgressbar()
     }, 1000);
     var day = ""
+    var month = ""
     var day1 = ""
+    var month1 = ""
     if(this.model.day <10){
       day = "0" + this.model.day.toString()
     }else{
@@ -150,6 +152,16 @@ export class HomeComponent implements OnInit {
     }else{
       day1 = this.model1.day.toString()
     }
+    if(this.model.month <10){
+      month = "0" + this.model.month.toString()
+    }else{
+      month = this.model.month.toString()
+    }
+    if(this.model1.month <10){
+      month1 = "0" + this.model1.month.toString()
+    }else{
+      month1 = this.model1.month.toString()
+    }
     var splitData = this.idSongArtis.split('\n')
     var listIdSongArtis = ""
     for(let i =0;i<splitData.length ; i++){
@@ -159,8 +171,8 @@ export class HomeComponent implements OnInit {
         listIdSongArtis = listIdSongArtis + ";"+splitData[i]
       }
       if(i == splitData.length-1){
-        this.startDate = this.model.year.toString() +"-"+ this.model.month.toString() +"-"+ day
-        this.endDate = this.model1.year.toString() +"-"+ this.model1.month.toString() +"-"+ day1
+        this.startDate = this.model.year.toString() +"-"+ month +"-"+ day
+        this.endDate = this.model1.year.toString() +"-"+ month1 +"-"+ day1
         var val = {
           listID:listIdSongArtis,
           bearToken:this.token,

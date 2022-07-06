@@ -113,6 +113,7 @@ export class HomeComponent implements OnInit {
               bearToken:this.token,
               sheetID:this.idGoogleSheet
             }
+            console.log(val)
             // var val = "?listID="+ this.listIdSongArtis+ "&listIDPlaylist="+ this.listIdPlaylist +"&bearToken="+ this.token+"&sheetID="+ this.idGoogleSheet
             this.trackingServer.trackingSpotify(val).subscribe(res=>{
               this.isProgressbar = true;
@@ -183,6 +184,7 @@ export class HomeComponent implements OnInit {
         }
         // var val = "?listID="+ this.listIdSongArtis +"&bearToken="+ this.token+"&sheetID="+ this.idGoogleSheet+ "&startDate="+ this.startDate+
         // "&endDate="+ this.endDate+"&fillters="+ this.fillters
+        console.log(val)
         this.trackingServer.trackingStreams(val).subscribe(res=>{
           this.isProgressbar = true;
           this.value = 100
